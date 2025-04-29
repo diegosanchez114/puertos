@@ -1,19 +1,19 @@
 .form-container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
+   /*  align-items: center; */
+    /* height: 100vh; */
+    /* background-color: #f5f5f5; */
     margin-top: 50px;
 }
 
 .puerto-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     gap: 16px;
     width: 800px;
     padding: 20px;
-    /* background: white; */
+    background: rgb(133, 165, 220);
     border-radius: 8px;
     margin-top: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

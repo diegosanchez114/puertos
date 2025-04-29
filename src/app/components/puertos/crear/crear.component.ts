@@ -1,23 +1,53 @@
 import {MatExpansionModule} from '@angular/material/expansion';
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
+import { IPuertosModel } from '../../../models/puertos,model';
+import {FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 
 @Component({
   selector: 'app-crear',
   standalone: true,
-  imports: [MatExpansionModule, MatFormFieldModule, MatLabel, MatInputModule, MatButtonModule, MatTabsModule],
+  imports: [MatExpansionModule, MatFormFieldModule, MatLabel, MatInputModule, MatButtonModule, MatTabsModule, FormsModule, ReactiveFormsModule, MatStepperModule],
   templateUrl: './crear.component.html',
   styleUrl: './crear.component.css'
 })
 export class CrearComponent {
 
-  items = ['Formulario1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
-  expandedIndex = 0;
-  readonly panelOpenState = signal(false);
+  private formBuilder: FormBuilder= inject(FormBuilder)
+
+  puerto: IPuertosModel= {
+    nombre: '',
+    ciudad: '',
+    personaEntrevistada: '',
+    cargo: '',
+    personaContacto: '',
+    cedula: '',
+    correoElectronico: '',
+    telefono: '',
+    fechaCreacion: new Date(), 
+    fechaModificacion: new Date ()
+  }
+
+  isLinear = true;
+
+  primeroFormGroup = this.formBuilder.group({
+    name: ['', Validators.required],
+  });
+  segundoFormGroup = this.formBuilder.group({
+    area: ['', Validators.required],
+  });
+  terceroFormGroup = this.formBuilder.group({
+    area: ['', Validators.required],
+  });
+
+  addPuerto(){
+    console.log(this.puerto);
+  }
 
 }
