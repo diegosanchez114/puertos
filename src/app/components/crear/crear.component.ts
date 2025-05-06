@@ -4,7 +4,7 @@ import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
-import { IPuertosModel } from '../../../models/puertos,model';
+import { IPuertosModel } from '../../models/puertos.model';
 import {FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
 
@@ -22,13 +22,14 @@ export class CrearComponent {
   private formBuilder: FormBuilder= inject(FormBuilder)
 
   puerto: IPuertosModel= {
-    nombre: '',
+    id: 0,
+    puerto: '',
     ciudad: '',
     personaEntrevistada: '',
     cargo: '',
     personaContacto: '',
     cedula: '',
-    correoElectronico: '',
+    correo: '',
     telefono: '',
     fechaCreacion: new Date(), 
     fechaModificacion: new Date ()
