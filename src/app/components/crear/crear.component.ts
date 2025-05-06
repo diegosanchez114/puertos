@@ -60,7 +60,7 @@ export class CrearComponent {
     area: ['', Validators.required],
   });
   terceroFormGroup = this.formBuilder.group({
-    numeroMuelles: ['', Validators.required],
+    area: ['', Validators.required],
   });
   cuartoFormGroup = this.formBuilder.group({
     area: ['', Validators.required],

@@ -47,7 +47,8 @@
                 <button mat-button matStepperNext >Siguiente</button>
             </form>
         </div> 
-   </mat-step>
+    </mat-step>
+
     <mat-step [stepControl]="segundoFormGroup" label="Caracteristicas">
         <div class="form-container">
             <form class="puerto-form" [formGroup]="segundoFormGroup">
@@ -61,36 +62,298 @@
                     <input matInput placeholder="área del uso adyacente"  type="number">
                 </mat-form-field>     
                 
-                <mat-form-field>
+                <!-- <mat-form-field>
                     <mat-label>Modos</mat-label>
                     <mat-select>
                       @for (modo of modos; track modo) {
                         <mat-option [value]="modo.value">{{modo.viewValue}}</mat-option>
                       }
                     </mat-select>
-                </mat-form-field>
+                </mat-form-field> -->
                 
                 
                   <button mat-button matStepperNext>Siguiente</button>
                 
-              </form>
+            </form>
         </div>      
     </mat-step>
+
     <mat-step [stepControl]="terceroFormGroup" label="Primer Subsistema">
         <div class="form-container">
-            <form class="puerto-form" [formGroup]="terceroFormGroup">
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Cuántos muelles tiene? </mat-label>
-                    <input matInput placeholder="Numero muelles"  type="number" formControlName="numeroMuelles" required>
+            <form class="puerto-form3" [formGroup]="terceroFormGroup">
+                <div class="example-form-fields">
+                    <mat-label>Muelle 1</mat-label>
+                    <mat-form-field>
+                        <mat-label>Tipo de carga</mat-label>
+                        <mat-select matNativeControl required>
+                          <mat-option value="conenedores">Contenedores</mat-option>
+                          <mat-option value="cargaGeneral">Carga general</mat-option>
+                          <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                          <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                          <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                          <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                        </mat-select> 
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Longitud</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field>
+                        <mat-label>Publico o Privado</mat-label>
+                        <mat-select matNativeControl required>
+                          <mat-option value="publico">Publico</mat-option>
+                          <mat-option value="privado">Privado</mat-option>                          
+                        </mat-select>
+                    </mat-form-field>                
+              
+                    <mat-form-field appearance="fill">
+                        <mat-label>Calado del muelle</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Pocisiones de Atraque</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Porcentaje de ocupación</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>       
+                </div>
+
+                <div class="example-form-fields">
+                    <mat-label>Muelle 2</mat-label>
+                    <mat-form-field>
+                        <mat-label>Tipo de carga</mat-label>
+                        <mat-select matNativeControl required>
+                            <mat-option value="conenedores">Contenedores</mat-option>
+                            <mat-option value="cargaGeneral">Carga general</mat-option>
+                            <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                            <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                            <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                            <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                          </mat-select> 
+                    </mat-form-field>
+                    
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Longitud</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field> 
+                    
+                    <mat-form-field>
+                        <mat-label>Publico o Privado</mat-label>
+                        <mat-select matNativeControl required>
+                          <mat-option value="publico">Publico</mat-option>
+                          <mat-option value="privado">Privado</mat-option>                          
+                        </mat-select>
+                    </mat-form-field>                   
+              
+                    <mat-form-field appearance="fill">
+                        <mat-label>Calado del muelle</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Pocisiones de Atraque</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Porcentaje de ocupación</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>       
+                </div>
+
+                <div class="example-form-fields">
+                    <mat-label>Muelle 3</mat-label>
+
+                    <mat-form-field>
+                        <mat-label>Tipo de carga</mat-label>
+                        <mat-select matNativeControl required>
+                            <mat-option value="conenedores">Contenedores</mat-option>
+                            <mat-option value="cargaGeneral">Carga general</mat-option>
+                            <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                            <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                            <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                            <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                          </mat-select> 
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill">
+                        <mat-label>Longitud</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field>
+                        <mat-label>Publico o Privado</mat-label>
+                        <mat-select matNativeControl required>
+                          <mat-option value="publico">Publico</mat-option>
+                          <mat-option value="privado">Privado</mat-option>                          
+                        </mat-select>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill">
+                        <mat-label>Calado del muelle</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Pocisiones de Atraque</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Porcentaje de ocupación</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>       
+                </div>
+
+                <div class="example-form-fields">
+                    <mat-label>Muelle 4</mat-label>
+
+                    <mat-form-field>
+                        <mat-label>Tipo de carga</mat-label>
+                        <mat-select matNativeControl required>
+                            <mat-option value="conenedores">Contenedores</mat-option>
+                            <mat-option value="cargaGeneral">Carga general</mat-option>
+                            <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                            <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                            <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                            <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                          </mat-select> 
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Longitud</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field>
+                        <mat-label>Publico o Privado</mat-label>
+                        <mat-select matNativeControl required>
+                          <mat-option value="publico">Publico</mat-option>
+                          <mat-option value="privado">Privado</mat-option>                          
+                        </mat-select>
+                    </mat-form-field>
+
+                   <mat-form-field appearance="fill">
+                        <mat-label>Calado del muelle</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Pocisiones de Atraque</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Porcentaje de ocupación</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>       
+                </div>
+
+                <div class="example-form-fields">
+                    <mat-label>Muelle 5</mat-label>
+
+                    <mat-form-field>
+                        <mat-label>Tipo de carga</mat-label>
+                        <mat-select matNativeControl required>
+                            <mat-option value="conenedores">Contenedores</mat-option>
+                            <mat-option value="cargaGeneral">Carga general</mat-option>
+                            <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                            <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                            <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                            <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                          </mat-select> 
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Longitud</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field>
+                        <mat-label>Publico o Privado</mat-label>
+                        <mat-select matNativeControl required>
+                          <mat-option value="publico">Publico</mat-option>
+                          <mat-option value="privado">Privado</mat-option>                          
+                        </mat-select>
+                    </mat-form-field>
+
+                   <mat-form-field appearance="fill">
+                        <mat-label>Calado del muelle</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Pocisiones de Atraque</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Porcentaje de ocupación</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>       
+                </div>
+
+                <div class="example-form-fields">
+                    <mat-label>Muelle 6</mat-label>
+                    <mat-form-field>
+                        <mat-label>Tipo de carga</mat-label>
+                        <mat-select matNativeControl required>
+                            <mat-option value="conenedores">Contenedores</mat-option>
+                            <mat-option value="cargaGeneral">Carga general</mat-option>
+                            <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                            <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                            <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                            <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                          </mat-select>  
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Longitud</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>  
+                    
+                    <mat-form-field>
+                        <mat-label>Publico o Privado</mat-label>
+                        <mat-select matNativeControl required>
+                          <mat-option value="publico">Publico</mat-option>
+                          <mat-option value="privado">Privado</mat-option>                          
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Calado del muelle</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Pocisiones de Atraque</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Porcentaje de ocupación</mat-label>
+                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                    </mat-form-field>       
+                </div>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>¿Cuáles es la maquinaria de la que se dispone ?</mat-label>
+                    <textarea matInput placeholder="Ejemplo: Grua, Tecnología"></textarea>
                 </mat-form-field>
-        
-                            
-                  
-                  <button mat-button matStepperNext>Siguiente</button>
-                
-              </form>
+
+                <button mat-button matStepperNext>Siguiente</button>  
+                                  
+            </form>
         </div>      
     </mat-step>
+
     <mat-step [stepControl]="cuartoFormGroup" label="Segundo Subsistema">
         <div class="form-container">
             <form class="puerto-form" [formGroup]="cuartoFormGroup">
@@ -121,22 +384,301 @@
                       <mat-label> <strong> Fancy</strong> <em> label</em></mat-label>
                     </mat-form-field>
                   </div>
-        
-        
-                            
-                  
+                
                   <button mat-button matStepperNext>Siguiente</button>
                 
               </form>
         </div>      
     </mat-step>
+
     <mat-step>
       <ng-template matStepLabel>Tercer Subsistema</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
+       <div class="form-container">
+            <form class="puerto-form" [formGroup]="segundoFormGroup">
+                <mat-form-field appearance="fill">
+                    <mat-label>¿Cuál es el área de uso público del concesionario? m<sup>2</sup> </mat-label>
+                    <input matInput placeholder="área de uso público"  type="number" formControlName="area" required>
+                </mat-form-field>
+        
+                <form class="puerto-form3" [formGroup]="terceroFormGroup">
+                    <div class="example-form-fields">
+                        <mat-label>Muelle 1</mat-label>
+                        <mat-form-field>
+                            <mat-label>Tipo de carga</mat-label>
+                            <mat-select matNativeControl required>
+                              <mat-option value="conenedores">Contenedores</mat-option>
+                              <mat-option value="cargaGeneral">Carga general</mat-option>
+                              <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                              <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                              <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                              <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                            </mat-select> 
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Longitud</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field>
+                            <mat-label>Publico o Privado</mat-label>
+                            <mat-select matNativeControl required>
+                              <mat-option value="publico">Publico</mat-option>
+                              <mat-option value="privado">Privado</mat-option>                          
+                            </mat-select>
+                        </mat-form-field>                
+                  
+                        <mat-form-field appearance="fill">
+                            <mat-label>Calado del muelle</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Pocisiones de Atraque</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Porcentaje de ocupación</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>       
+                    </div>
+    
+                    <div class="example-form-fields">
+                        <mat-label>Muelle 2</mat-label>
+                        <mat-form-field>
+                            <mat-label>Tipo de carga</mat-label>
+                            <mat-select matNativeControl required>
+                                <mat-option value="conenedores">Contenedores</mat-option>
+                                <mat-option value="cargaGeneral">Carga general</mat-option>
+                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                              </mat-select> 
+                        </mat-form-field>
+                        
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Longitud</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field> 
+                        
+                        <mat-form-field>
+                            <mat-label>Publico o Privado</mat-label>
+                            <mat-select matNativeControl required>
+                              <mat-option value="publico">Publico</mat-option>
+                              <mat-option value="privado">Privado</mat-option>                          
+                            </mat-select>
+                        </mat-form-field>                   
+                  
+                        <mat-form-field appearance="fill">
+                            <mat-label>Calado del muelle</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Pocisiones de Atraque</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Porcentaje de ocupación</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>       
+                    </div>
+    
+                    <div class="example-form-fields">
+                        <mat-label>Muelle 3</mat-label>
+    
+                        <mat-form-field>
+                            <mat-label>Tipo de carga</mat-label>
+                            <mat-select matNativeControl required>
+                                <mat-option value="conenedores">Contenedores</mat-option>
+                                <mat-option value="cargaGeneral">Carga general</mat-option>
+                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                              </mat-select> 
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance="fill">
+                            <mat-label>Longitud</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field>
+                            <mat-label>Publico o Privado</mat-label>
+                            <mat-select matNativeControl required>
+                              <mat-option value="publico">Publico</mat-option>
+                              <mat-option value="privado">Privado</mat-option>                          
+                            </mat-select>
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance="fill">
+                            <mat-label>Calado del muelle</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Pocisiones de Atraque</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Porcentaje de ocupación</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>       
+                    </div>
+    
+                    <div class="example-form-fields">
+                        <mat-label>Muelle 4</mat-label>
+    
+                        <mat-form-field>
+                            <mat-label>Tipo de carga</mat-label>
+                            <mat-select matNativeControl required>
+                                <mat-option value="conenedores">Contenedores</mat-option>
+                                <mat-option value="cargaGeneral">Carga general</mat-option>
+                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                              </mat-select> 
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Longitud</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field>
+                            <mat-label>Publico o Privado</mat-label>
+                            <mat-select matNativeControl required>
+                              <mat-option value="publico">Publico</mat-option>
+                              <mat-option value="privado">Privado</mat-option>                          
+                            </mat-select>
+                        </mat-form-field>
+    
+                       <mat-form-field appearance="fill">
+                            <mat-label>Calado del muelle</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Pocisiones de Atraque</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Porcentaje de ocupación</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>       
+                    </div>
+    
+                    <div class="example-form-fields">
+                        <mat-label>Muelle 5</mat-label>
+    
+                        <mat-form-field>
+                            <mat-label>Tipo de carga</mat-label>
+                            <mat-select matNativeControl required>
+                                <mat-option value="conenedores">Contenedores</mat-option>
+                                <mat-option value="cargaGeneral">Carga general</mat-option>
+                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                              </mat-select> 
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Longitud</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field>
+                            <mat-label>Publico o Privado</mat-label>
+                            <mat-select matNativeControl required>
+                              <mat-option value="publico">Publico</mat-option>
+                              <mat-option value="privado">Privado</mat-option>                          
+                            </mat-select>
+                        </mat-form-field>
+    
+                       <mat-form-field appearance="fill">
+                            <mat-label>Calado del muelle</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Pocisiones de Atraque</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Porcentaje de ocupación</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>       
+                    </div>
+    
+                    <div class="example-form-fields">
+                        <mat-label>Muelle 6</mat-label>
+                        <mat-form-field>
+                            <mat-label>Tipo de carga</mat-label>
+                            <mat-select matNativeControl required>
+                                <mat-option value="conenedores">Contenedores</mat-option>
+                                <mat-option value="cargaGeneral">Carga general</mat-option>
+                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
+                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
+                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
+                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
+                              </mat-select>  
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Longitud</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>  
+                        
+                        <mat-form-field>
+                            <mat-label>Publico o Privado</mat-label>
+                            <mat-select matNativeControl required>
+                              <mat-option value="publico">Publico</mat-option>
+                              <mat-option value="privado">Privado</mat-option>                          
+                            </mat-select>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Calado del muelle</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Pocisiones de Atraque</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Porcentaje de ocupación</mat-label>
+                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        </mat-form-field>       
+                    </div>
+    
+                    <mat-form-field class="example-full-width">
+                        <mat-label>¿Cuáles es la maquinaria de la que se dispone ?</mat-label>
+                        <textarea matInput placeholder="Ejemplo: Grua, Tecnología"></textarea>
+                    </mat-form-field>
+    
+                    <button mat-button matStepperNext>Siguiente</button>  
+                                      
+                </form>
+
+                
+                
+                
+                  <button mat-button matStepperNext>Siguiente</button>
+                
+            </form>
+        </div>
     </mat-step>
 </mat-stepper>
   
