@@ -59,8 +59,18 @@
                 <mat-form-field appearance="fill">
                     <mat-label>¿Cuál es el área del uso adyacente? m<sup>2</sup></mat-label>
                     <input matInput placeholder="área del uso adyacente"  type="number">
-                </mat-form-field>                 
-                  
+                </mat-form-field>     
+                
+                <mat-form-field>
+                    <mat-label>Modos</mat-label>
+                    <mat-select>
+                      @for (modo of modos; track modo) {
+                        <mat-option [value]="modo.value">{{modo.viewValue}}</mat-option>
+                      }
+                    </mat-select>
+                </mat-form-field>
+                
+                
                   <button mat-button matStepperNext>Siguiente</button>
                 
               </form>
@@ -70,14 +80,50 @@
         <div class="form-container">
             <form class="puerto-form" [formGroup]="terceroFormGroup">
                 <mat-form-field appearance="fill">
-                    <mat-label>¿Cuál es el área de uso público del concesionario? m<sup>2</sup> </mat-label>
-                    <input matInput placeholder="área de uso público"  type="number" formControlName="area" required>
+                    <mat-label>¿Cuántos muelles tiene? </mat-label>
+                    <input matInput placeholder="Numero muelles"  type="number" formControlName="numeroMuelles" required>
                 </mat-form-field>
         
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Cuál es el área del uso adyacente? m<sup>2</sup></mat-label>
-                    <input matInput placeholder="área del uso adyacente"  type="number">
-                </mat-form-field>                 
+                            
+                  
+                  <button mat-button matStepperNext>Siguiente</button>
+                
+              </form>
+        </div>      
+    </mat-step>
+    <mat-step [stepControl]="cuartoFormGroup" label="Segundo Subsistema">
+        <div class="form-container">
+            <form class="puerto-form" [formGroup]="cuartoFormGroup">
+                <mat-label>Patios</mat-label>
+                <mat-form-field>
+                    
+                    <input matInput placeholder="cantidad"  type="number" formControlName="area" required>                    
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="cantidad"  type="number" formControlName="area" required> 
+                </mat-form-field>
+
+                <div class="example-form-fields">
+                    <mat-form-field  >
+                      <input matInput placeholder="Simple placeholder" required />
+                    </mat-form-field>
+              
+                    <mat-form-field >
+                      <mat-label>Both a label and a placeholder</mat-label>
+                      <input matInput placeholder="Simple placeholder" />
+                    </mat-form-field>
+              
+                    <mat-form-field  >
+                      <mat-select required>
+                        <mat-option>-- None --</mat-option>
+                        <mat-option value="option">Option</mat-option>
+                      </mat-select>
+                      <mat-label> <strong> Fancy</strong> <em> label</em></mat-label>
+                    </mat-form-field>
+                  </div>
+        
+        
+                            
                   
                   <button mat-button matStepperNext>Siguiente</button>
                 
@@ -85,7 +131,7 @@
         </div>      
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Segundo Subsistema</ng-template>
+      <ng-template matStepLabel>Tercer Subsistema</ng-template>
       <p>You are now done.</p>
       <div>
         <button mat-button matStepperPrevious>Back</button>
