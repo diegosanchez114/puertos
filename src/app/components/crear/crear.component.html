@@ -1,81 +1,83 @@
 <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="primeroFormGroup">
         <div class="form-container">
-            <form  class="puerto-form" [formGroup]="primeroFormGroup">
-                <ng-template matStepLabel>Crear Puerto</ng-template>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="name">Nombre de la sociedad portuaria</mat-label>
-                    <input matInput placeholder="Ingresa el nombre"  formControlName="name" required>
-                </mat-form-field>
+            <form [formGroup]="primeroFormGroup">
+                <ng-template matStepLabel>Crear Puerto</ng-template>                
+                <div class="puerto-form" >
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label for="name">Nombre de la sociedad portuaria</mat-label>
+                        <input matInput placeholder="Ingresa el nombre"  formControlName="name" required>
+                    </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label for="ciudad">Ciudad a la que pertenece la sociedad portuaria</mat-label>
-                    <input matInput type="email" placeholder="Sociedad Portuaria" name="ciudad">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label for="personaEntrevistada">Persona Entrevistada</mat-label>
-                    <input matInput placeholder="Ingresa la persona" name="personaEntrevistada">
-                </mat-form-field>              
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="cargo">Cargo dentro de la empresa</mat-label>
-                    <input matInput placeholder="Ingresa el cargo" name="cargo">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="personaContacto">Persona de contacto</mat-label>
-                    <input matInput placeholder="Persona de conacto" name="personaContacto">
-                </mat-form-field>
-                
-                <mat-form-field appearance="fill">
-                    <mat-label for="cedula">Cedula de Ciudadania</mat-label>
-                    <input matInput placeholder="Cedula de Ciudadania" name="cedula">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="correo">Correo Electronico</mat-label>
-                    <input matInput placeholder="Correo Electronico" name="correo">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="telefono">Telefono</mat-label>
-                    <input matInput placeholder="Telefono" name="telefono">
-                </mat-form-field>       
-                
-                <button mat-button matStepperNext >Siguiente</button>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label for="ciudad">Ciudad a la que pertenece la sociedad portuaria</mat-label>
+                        <input matInput type="email" placeholder="Sociedad Portuaria" name="ciudad">
+                    </mat-form-field>
+                </div>
+                <div class="puerto-form">
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label for="personaEntrevistada">Persona Entrevistada</mat-label>
+                        <input matInput placeholder="Ingresa la persona" name="personaEntrevistada">
+                    </mat-form-field>              
+            
+                    <mat-form-field appearance="fill"  class="example-full-width">
+                        <mat-label for="cargo">Cargo dentro de la empresa</mat-label>
+                        <input matInput placeholder="Ingresa el cargo" name="cargo">
+                    </mat-form-field>
+                </div>
+                <div class="puerto-form">
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label for="personaContacto">Persona de contacto</mat-label>
+                        <input matInput placeholder="Persona de conacto" name="personaContacto">
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label for="cedula">Cedula de Ciudadania</mat-label>
+                        <input matInput placeholder="Cedula de Ciudadania" name="cedula">
+                    </mat-form-field>
+                </div>
+                <div class="puerto-form">
+                    <mat-form-field appearance="fill"  class="example-full-width">
+                        <mat-label for="correo">Correo Electronico</mat-label>
+                        <input matInput placeholder="Correo Electronico" name="correo">
+                    </mat-form-field>
+            
+                    <mat-form-field appearance="fill"  class="example-full-width">
+                        <mat-label for="telefono">Telefono</mat-label>
+                        <input matInput placeholder="Telefono" name="telefono">
+                    </mat-form-field> 
+                </div>
+                <button mat-flat-button matStepperNext color="primary">Siguiente</button>
             </form>
         </div> 
     </mat-step>
 
-    <mat-step [stepControl]="segundoFormGroup" label="Caracteristicas">
+    <mat-step [stepControl]="segundoFormGroup" label="Caracteristicas"> 
         <div class="form-container">
-            <form class="puerto-form" [formGroup]="segundoFormGroup">
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Cuál es el área de uso público del concesionario? m<sup>2</sup> </mat-label>
-                    <input matInput placeholder="área de uso público"  type="number" formControlName="area" required>
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Cuál es el área del uso adyacente? m<sup>2</sup></mat-label>
-                    <input matInput placeholder="área del uso adyacente"  type="number">
-                </mat-form-field>     
+            <form [formGroup]="segundoFormGroup">
+                <div class="puerto-form">
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>¿Cuál es el área de uso público del concesionario? m<sup>2</sup> </mat-label>
+                        <input matInput placeholder="área de uso público"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                    </div> 
+                    <div class="puerto-form">
+                        <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label>¿Cuál es el área del uso adyacente? m<sup>2</sup></mat-label>
+                            <input matInput placeholder="área del uso adyacente"  type="number">
+                        </mat-form-field> 
+                    </div>
+                    <button mat-flat-button matStepperNext color="primary">Siguiente</button>
+                </form>
+        </div>       
+            
+                    
+                               
                 
-                <!-- <mat-form-field>
-                    <mat-label>Modos</mat-label>
-                    <mat-select>
-                      @for (modo of modos; track modo) {
-                        <mat-option [value]="modo.value">{{modo.viewValue}}</mat-option>
-                      }
-                    </mat-select>
-                </mat-form-field> -->
+              
                 
-                
-                  <button mat-button matStepperNext>Siguiente</button>
-                
-            </form>
-        </div>      
+            
+              
     </mat-step>
 
     <mat-step [stepControl]="terceroFormGroup" label="Primer Subsistema">
@@ -110,7 +112,7 @@
               
                     <mat-form-field appearance="fill">
                         <mat-label>Calado del muelle</mat-label>
-                        <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        <input matInput placeholder="metros"  type="number" formControlName="area" required>
                     </mat-form-field>
 
                     <mat-form-field appearance="fill">
@@ -357,34 +359,71 @@
     <mat-step [stepControl]="cuartoFormGroup" label="Segundo Subsistema">
         <div class="form-container">
             <form class="puerto-form" [formGroup]="cuartoFormGroup">
-                <mat-label>Patios</mat-label>
-                <mat-form-field>
-                    
-                    <input matInput placeholder="cantidad"  type="number" formControlName="area" required>                    
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="cantidad"  type="number" formControlName="area" required> 
-                </mat-form-field>
+                    <div class="example-form-fields">
+                                              
+                        <mat-label>Patios</mat-label>  
+                        <mat-form-field appearance="fill">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput placeholder="Cantidad"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field appearance="fill">
+                            <mat-label> Superficie m<sup>2</sup></mat-label>
+                            <input matInput placeholder="Carga"  type="number" formControlName="area" required>
+                        </mat-form-field>                
+                  
+                        
+                    </div>
 
-                <div class="example-form-fields">
-                    <mat-form-field  >
-                      <input matInput placeholder="Simple placeholder" required />
-                    </mat-form-field>
-              
-                    <mat-form-field >
-                      <mat-label>Both a label and a placeholder</mat-label>
-                      <input matInput placeholder="Simple placeholder" />
-                    </mat-form-field>
-              
-                    <mat-form-field  >
-                      <mat-select required>
-                        <mat-option>-- None --</mat-option>
-                        <mat-option value="option">Option</mat-option>
-                      </mat-select>
-                      <mat-label> <strong> Fancy</strong> <em> label</em></mat-label>
-                    </mat-form-field>
-                  </div>
-                
+                     
+                    <div class="example-form-fields">
+                        <mat-label>Silos</mat-label>   
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput placeholder="Cantidad"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field appearance="fill">
+                            <mat-label> Superficie m<sup>2</sup></mat-label>
+                            <input matInput placeholder="Carga"  type="number" formControlName="area" required>
+                        </mat-form-field>                
+                    </div>
+
+                     
+                    <div class="example-form-fields">
+                        <mat-label>Bodegas</mat-label>                    
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput placeholder="Cantidad"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field appearance="fill">
+                            <mat-label> Superficie m<sup>2</sup></mat-label>
+                            <input matInput placeholder="Carga"  type="number" formControlName="area" required>
+                        </mat-form-field>                
+                  
+                        
+                    </div>
+
+                      
+                    <div class="example-form-fields">
+                                              
+                        <mat-label>Oficinas</mat-label>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput placeholder="Cantidad"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field appearance="fill">
+                            <mat-label> Superficie m<sup>2</sup></mat-label>
+                            <input matInput placeholder="Carga"  type="number" formControlName="area" required>
+                        </mat-form-field>                
+                  
+                        
+                    </div>
+                    
                   <button mat-button matStepperNext>Siguiente</button>
                 
               </form>
@@ -393,380 +432,199 @@
 
     <mat-step>
       <ng-template matStepLabel>Tercer Subsistema</ng-template>
-       <div class="form-container">
-            <form class="puerto-form" [formGroup]="segundoFormGroup">
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Cuál es el área de uso público del concesionario? m<sup>2</sup> </mat-label>
-                    <input matInput placeholder="área de uso público"  type="number" formControlName="area" required>
-                </mat-form-field>
+       <div class="form-container">                      
         
                 <form class="puerto-form3" [formGroup]="terceroFormGroup">
+                    <mat-label>Máximo de camiones que carga/descargan por hora</mat-label>  
                     <div class="example-form-fields">
-                        <mat-label>Muelle 1</mat-label>
-                        <mat-form-field>
-                            <mat-label>Tipo de carga</mat-label>
-                            <mat-select matNativeControl required>
-                              <mat-option value="conenedores">Contenedores</mat-option>
-                              <mat-option value="cargaGeneral">Carga general</mat-option>
-                              <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
-                              <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
-                              <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
-                              <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
-                            </mat-select> 
-                        </mat-form-field>
+                                              
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Longitud</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Contenedores</mat-label>
+                            <input matInput placeholder="Contenedores"  type="number" formControlName="area" required>
                         </mat-form-field>   
                         
-                        <mat-form-field>
-                            <mat-label>Publico o Privado</mat-label>
-                            <mat-select matNativeControl required>
-                              <mat-option value="publico">Publico</mat-option>
-                              <mat-option value="privado">Privado</mat-option>                          
-                            </mat-select>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Carga General</mat-label>
+                            <input matInput placeholder="Carga"  type="number" formControlName="area" required>
                         </mat-form-field>                
                   
                         <mat-form-field appearance="fill">
-                            <mat-label>Calado del muelle</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido distinto de carbón</mat-label>
+                            <input matInput placeholder="Granel carbón"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Pocisiones de Atraque</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón térmico</mat-label>
+                            <input matInput placeholder="carbón térmico"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Porcentaje de ocupación</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón metalúrgico y coque</mat-label>
+                            <input matInput placeholder="carbón metalúrgico"  type="number" formControlName="area" required>
                         </mat-form-field>       
-                    </div>
-    
-                    <div class="example-form-fields">
-                        <mat-label>Muelle 2</mat-label>
-                        <mat-form-field>
-                            <mat-label>Tipo de carga</mat-label>
-                            <mat-select matNativeControl required>
-                                <mat-option value="conenedores">Contenedores</mat-option>
-                                <mat-option value="cargaGeneral">Carga general</mat-option>
-                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
-                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
-                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
-                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
-                              </mat-select> 
-                        </mat-form-field>
-                        
+                    
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Longitud</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
-                        </mat-form-field> 
+                                    <mat-label>Granel líquido distinto de hidrocarburos</mat-label>
+                                    <input matInput placeholder="hidrocarburos"  type="number" formControlName="area" required>
+                            </mat-form-field> 
+                    </div>   
+                    
+                    <mat-label>Promedio de camiones que carga/descargan por hora</mat-label>  
+                    <div class="example-form-fields">
+                                              
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Contenedores</mat-label>
+                            <input matInput placeholder="Contenedores"  type="number" formControlName="area" required>
+                        </mat-form-field>   
                         
-                        <mat-form-field>
-                            <mat-label>Publico o Privado</mat-label>
-                            <mat-select matNativeControl required>
-                              <mat-option value="publico">Publico</mat-option>
-                              <mat-option value="privado">Privado</mat-option>                          
-                            </mat-select>
-                        </mat-form-field>                   
+                        <mat-form-field appearance="fill">
+                            <mat-label>Carga General</mat-label>
+                            <input matInput placeholder="Carga"  type="number" formControlName="area" required>
+                        </mat-form-field>                
                   
                         <mat-form-field appearance="fill">
-                            <mat-label>Calado del muelle</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido distinto de carbón</mat-label>
+                            <input matInput placeholder="Granel carbón"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Pocisiones de Atraque</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón térmico</mat-label>
+                            <input matInput placeholder="carbón térmico"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Porcentaje de ocupación</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón metalúrgico y coque</mat-label>
+                            <input matInput placeholder="carbón metalúrgico"  type="number" formControlName="area" required>
                         </mat-form-field>       
-                    </div>
+                    
     
-                    <div class="example-form-fields">
-                        <mat-label>Muelle 3</mat-label>
-    
-                        <mat-form-field>
-                            <mat-label>Tipo de carga</mat-label>
-                            <mat-select matNativeControl required>
-                                <mat-option value="conenedores">Contenedores</mat-option>
-                                <mat-option value="cargaGeneral">Carga general</mat-option>
-                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
-                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
-                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
-                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
-                              </mat-select> 
-                        </mat-form-field>
-                        
                         <mat-form-field appearance="fill">
-                            <mat-label>Longitud</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                                    <mat-label>Granel líquido distinto de hidrocarburos</mat-label>
+                                    <input matInput placeholder="hidrocarburos"  type="number" formControlName="area" required>
+                            </mat-form-field> 
+                    </div>
+
+                    <mat-label>TEUs</mat-label>  
+                    <div class="example-form-fields">
+                                              
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Contenedores</mat-label>
+                            <input matInput placeholder="Contenedores"  type="number" formControlName="area" required>
                         </mat-form-field>   
                         
-                        <mat-form-field>
-                            <mat-label>Publico o Privado</mat-label>
-                            <mat-select matNativeControl required>
-                              <mat-option value="publico">Publico</mat-option>
-                              <mat-option value="privado">Privado</mat-option>                          
-                            </mat-select>
-                        </mat-form-field>
-                        
                         <mat-form-field appearance="fill">
-                            <mat-label>Calado del muelle</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Carga General</mat-label>
+                            <input matInput placeholder="Carga"  type="number" formControlName="area" required>
+                        </mat-form-field>                
+                  
+                        <mat-form-field appearance="fill">
+                            <mat-label>Granel sólido distinto de carbón</mat-label>
+                            <input matInput placeholder="Granel carbón"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Pocisiones de Atraque</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón térmico</mat-label>
+                            <input matInput placeholder="carbón térmico"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Porcentaje de ocupación</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón metalúrgico y coque</mat-label>
+                            <input matInput placeholder="carbón metalúrgico"  type="number" formControlName="area" required>
                         </mat-form-field>       
-                    </div>
-    
-                    <div class="example-form-fields">
-                        <mat-label>Muelle 4</mat-label>
-    
-                        <mat-form-field>
-                            <mat-label>Tipo de carga</mat-label>
-                            <mat-select matNativeControl required>
-                                <mat-option value="conenedores">Contenedores</mat-option>
-                                <mat-option value="cargaGeneral">Carga general</mat-option>
-                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
-                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
-                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
-                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
-                              </mat-select> 
-                        </mat-form-field>
+                    
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Longitud</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                                    <mat-label>Granel líquido distinto de hidrocarburos</mat-label>
+                                    <input matInput placeholder="hidrocarburos"  type="number" formControlName="area" required>
+                            </mat-form-field> 
+                    </div>
+
+                    <mat-label>Toneladas</mat-label>  
+                    <div class="example-form-fields">
+                                              
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Contenedores</mat-label>
+                            <input matInput placeholder="Contenedores"  type="number" formControlName="area" required>
                         </mat-form-field>   
                         
-                        <mat-form-field>
-                            <mat-label>Publico o Privado</mat-label>
-                            <mat-select matNativeControl required>
-                              <mat-option value="publico">Publico</mat-option>
-                              <mat-option value="privado">Privado</mat-option>                          
-                            </mat-select>
-                        </mat-form-field>
-    
-                       <mat-form-field appearance="fill">
-                            <mat-label>Calado del muelle</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Carga General</mat-label>
+                            <input matInput placeholder="Carga"  type="number" formControlName="area" required>
+                        </mat-form-field>                
+                  
+                        <mat-form-field appearance="fill">
+                            <mat-label>Granel sólido distinto de carbón</mat-label>
+                            <input matInput placeholder="Granel carbón"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Pocisiones de Atraque</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón térmico</mat-label>
+                            <input matInput placeholder="carbón térmico"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Porcentaje de ocupación</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón metalúrgico y coque</mat-label>
+                            <input matInput placeholder="carbón metalúrgico"  type="number" formControlName="area" required>
                         </mat-form-field>       
-                    </div>
-    
-                    <div class="example-form-fields">
-                        <mat-label>Muelle 5</mat-label>
-    
-                        <mat-form-field>
-                            <mat-label>Tipo de carga</mat-label>
-                            <mat-select matNativeControl required>
-                                <mat-option value="conenedores">Contenedores</mat-option>
-                                <mat-option value="cargaGeneral">Carga general</mat-option>
-                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
-                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
-                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
-                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
-                              </mat-select> 
-                        </mat-form-field>
+                    
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Longitud</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                                    <mat-label>Granel líquido distinto de hidrocarburos</mat-label>
+                                    <input matInput placeholder="hidrocarburos"  type="number" formControlName="area" required>
+                            </mat-form-field> 
+                    </div> 
+
+                    <mat-label>Unidad por camión</mat-label>  
+                    <div class="example-form-fields">
+                                              
+    
+                        <mat-form-field appearance="fill">
+                            <mat-label>Contenedores</mat-label>
+                            <input matInput placeholder="Contenedores"  type="number" formControlName="area" required>
                         </mat-form-field>   
                         
-                        <mat-form-field>
-                            <mat-label>Publico o Privado</mat-label>
-                            <mat-select matNativeControl required>
-                              <mat-option value="publico">Publico</mat-option>
-                              <mat-option value="privado">Privado</mat-option>                          
-                            </mat-select>
-                        </mat-form-field>
-    
-                       <mat-form-field appearance="fill">
-                            <mat-label>Calado del muelle</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Carga General</mat-label>
+                            <input matInput placeholder="Carga"  type="number" formControlName="area" required>
+                        </mat-form-field>                
+                  
+                        <mat-form-field appearance="fill">
+                            <mat-label>Granel sólido distinto de carbón</mat-label>
+                            <input matInput placeholder="Granel carbón"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Pocisiones de Atraque</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón térmico</mat-label>
+                            <input matInput placeholder="carbón térmico"  type="number" formControlName="area" required>
                         </mat-form-field>
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Porcentaje de ocupación</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
+                            <mat-label>Granel sólido en forma de carbón metalúrgico y coque</mat-label>
+                            <input matInput placeholder="carbón metalúrgico"  type="number" formControlName="area" required>
                         </mat-form-field>       
-                    </div>
-    
-                    <div class="example-form-fields">
-                        <mat-label>Muelle 6</mat-label>
-                        <mat-form-field>
-                            <mat-label>Tipo de carga</mat-label>
-                            <mat-select matNativeControl required>
-                                <mat-option value="conenedores">Contenedores</mat-option>
-                                <mat-option value="cargaGeneral">Carga general</mat-option>
-                                <mat-option value="granelCarbon">Granel sólido distinto de carbón</mat-option> 
-                                <mat-option value="granelTermico">Granel sólido en forma de carbón térmico</mat-option>
-                                <mat-option value="granelMetalurgico">Granel sólido en forma de carbón metalúrgico y coque</mat-option> 
-                                <mat-option value="granelLiquidoGas">Granel líquido en forma de hidrocarburos y gas</mat-option>                           
-                              </mat-select>  
-                        </mat-form-field>
+                    
     
                         <mat-form-field appearance="fill">
-                            <mat-label>Longitud</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
-                        </mat-form-field>  
-                        
-                        <mat-form-field>
-                            <mat-label>Publico o Privado</mat-label>
-                            <mat-select matNativeControl required>
-                              <mat-option value="publico">Publico</mat-option>
-                              <mat-option value="privado">Privado</mat-option>                          
-                            </mat-select>
-                        </mat-form-field>
-    
-                        <mat-form-field appearance="fill">
-                            <mat-label>Calado del muelle</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
-                        </mat-form-field>
-    
-                        <mat-form-field appearance="fill">
-                            <mat-label>Pocisiones de Atraque</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
-                        </mat-form-field>
-    
-                        <mat-form-field appearance="fill">
-                            <mat-label>Porcentaje de ocupación</mat-label>
-                            <input matInput placeholder="longitud"  type="number" formControlName="area" required>
-                        </mat-form-field>       
-                    </div>
-    
-                    <mat-form-field class="example-full-width">
-                        <mat-label>¿Cuáles es la maquinaria de la que se dispone ?</mat-label>
-                        <textarea matInput placeholder="Ejemplo: Grua, Tecnología"></textarea>
-                    </mat-form-field>
-    
-                    <button mat-button matStepperNext>Siguiente</button>  
+                                    <mat-label>Granel líquido distinto de hidrocarburos</mat-label>
+                                    <input matInput placeholder="hidrocarburos"  type="number" formControlName="area" required>
+                            </mat-form-field> 
+                    </div> 
+                                       
+                  <button mat-button matStepperNext>Guardar</button>  
                                       
                 </form>
 
-                
-                
-                
-                  <button mat-button matStepperNext>Siguiente</button>
-                
-            </form>
-        </div>
-    </mat-step>
+       </div>  
+    </mat-step>    
 </mat-stepper>
   
 
-<!-- <mat-tab-group>
-    <mat-tab label="Crear Puerto"> 
-        <div class="form-container">
-            <form class="puerto-form" (ngSubmit)="addPuerto()">                
-                <mat-form-field appearance="fill">
-                    <mat-label for="name">Nombre de la sociedad portuaria</mat-label>
-                    <input matInput placeholder="Ingresa el nombre" name="name" [(ngModel)]="puerto.nombre">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="ciudad">Ciudad a la que pertenece la sociedad portuaria</mat-label>
-                    <input matInput type="email" placeholder="Sociedad Portuaria" name="ciudad" [(ngModel)]="puerto.ciudad">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="personaEntrevistada">Persona Entrevistada</mat-label>
-                    <input matInput placeholder="Ingresa la persona" name="personaEntrevistada" [(ngModel)]="puerto.personaEntrevistada">
-                </mat-form-field>              
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="cargo">Cargo dentro de la empresa</mat-label>
-                    <input matInput placeholder="Ingresa el cargo" name="cargo" [(ngModel)]="puerto.cargo">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="personaContacto">Persona de contacto</mat-label>
-                    <input matInput placeholder="Persona de conacto" name="personaContacto" [(ngModel)]="puerto.personaContacto">
-                </mat-form-field>
-                
-                <mat-form-field appearance="fill">
-                    <mat-label for="cedula">Cedula de Ciudadania</mat-label>
-                    <input matInput placeholder="Cedula de Ciudadania" name="cedula" [(ngModel)]="puerto.cedula">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="correo">Correo Electronico</mat-label>
-                    <input matInput placeholder="Correo Electronico" name="correo" [(ngModel)]="puerto.correoElectronico">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label for="telefono">Telefono</mat-label>
-                    <input matInput placeholder="Telefono" name="telefono" [(ngModel)]="puerto.telefono">
-                </mat-form-field>
-        
-                <button mat-raised-button color="primary" type="submit">Siguiente</button>
-            </form>
-        </div>  
-    </mat-tab>
-    <mat-tab label="Caracteristicas"> 
-        <div class="form-container">
-            <form class="puerto-form">                
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Cuál es el área de uso público del concesionario? m<sup>2</sup> </mat-label>
-                    <input matInput placeholder="área de uso público"  type="number">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Cuál es el área del uso adyacente? m<sup>2</sup></mat-label>
-                    <input matInput placeholder="área del uso adyacente"  type="number">
-                </mat-form-field>   
-                
-                <button mat-raised-button color="primary" type="submit">Siguiente</button>
-            </form> 
-        </div>       
-    </mat-tab>   
-    <mat-tab label="Tipos de Acceso"> 
-        <div class="form-container">
-            <form class="puerto-form">                
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Cuál es el área de uso público del concesionario? m<sup>2</sup> </mat-label>
-                    <input matInput placeholder="área de uso público"  type="number">
-                </mat-form-field>
-        
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Cuál es el área del uso adyacente? m<sup>2</sup></mat-label>
-                    <input matInput placeholder="área del uso adyacente"  type="number">
-                </mat-form-field>  -->  
-                
-                <!--<button mat-raised-button color="primary" type="submit">Siguiente</button>               
-            </form> 
-        </div> 
-    </mat-tab>
-</mat-tab-group> -->
-        
+
         
       
     
