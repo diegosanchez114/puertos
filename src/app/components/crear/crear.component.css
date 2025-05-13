@@ -11,12 +11,17 @@
     /* gap: 16px; */
     width: 100%;
     padding: 20px;
-    background: rgb(133, 165, 220);
+    /* background: rgb(133, 165, 220); */
     border-radius: 0px; 
     margin-right: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     /*padding-top: 100px;*/
     
+}
+
+.puerto-form > mat-label{
+  padding: 20px;
+  text-align: right;
 }
 
 span{

@@ -99,17 +99,13 @@
                         </mat-select>
                     </mat-form-field>
                 </div> 
-                <div class="puerto-form">
-                    
+                <div class="puerto-form">                   
 
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label>Calado del muelle</mat-label>
                         <input matInput placeholder="metros"  type="number" formControlName="area" required>
                     </mat-form-field>                
                 
-                    
-                </div> 
-                <div class="puerto-form">
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label> Numero Pocisiones de Atraque</mat-label>
                         <input matInput placeholder="número"  type="number" formControlName="area" required>
@@ -119,38 +115,39 @@
                         <mat-label>Porcentaje de ocupación</mat-label>
                         <input matInput placeholder="Cada tipo de carga en las posiciones de atraque"  type="number" formControlName="area" required>
                     </mat-form-field>
-                </div>
+                    
+                </div>               
 
                 <div class="puerto-form">
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label>¿cuáles son los rendimientos objetivo?</mat-label>
                         <input matInput placeholder="por hora buque muelle "  type="number" formControlName="area" required>
-                    </mat-form-field>                    
-                </div>
-                <div class="puerto-form">
+                    </mat-form-field>  
+                    
                     <mat-form-field class="example-full-width">
                         <mat-label>¿Cuáles es la maquinaria de la que se dispone ?</mat-label>
                         <textarea matInput placeholder="Ejemplo: Grua, Tecnología"></textarea>
                     </mat-form-field>
-                </div>
-                <div class="puerto-form">
+
                     <mat-form-field class="example-full-width">
                         <mat-label>Número de horas disponibles al año para operación</mat-label>
                         <input matInput placeholder="Horas"  type="number" formControlName="area" required>
                     </mat-form-field>
-                </div>
-                <button mat-flat-button matStepperNext color="primary">Agregar</button>  
+                </div>               
+                
                 <button mat-flat-button matStepperNext color="primary">Siguiente</button>                               
             </form>
+            <button mat-flat-button matStepperNext color="primary" style="margin-right: 5px;" (onclick)="agregar()">Agregar</button>  
         </div>      
     </mat-step>
 
     <mat-step [stepControl]="cuartoFormGroup" label="Segundo Subsistema">
         <div class="form-container">
             <form  [formGroup]="cuartoFormGroup">            
-                <h2>¿Que tipo de almacenamiento tiene?</h2>
-                <mat-label>Patios</mat-label>                     
-                    <div class="puerto-form">                        
+                <h2>¿Que tipo de almacenamiento tiene?</h2>              
+                
+                    <div class="puerto-form"> 
+                        <mat-label>Patios</mat-label>                       
                         <mat-form-field appearance="fill" class="example-full-width">
                             <mat-label>Cantidad</mat-label>
                             <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
@@ -159,11 +156,47 @@
                         <mat-form-field appearance="fill" class="example-full-width">
                             <mat-label> Superficie m<sup>2</sup></mat-label>
                             <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
-                        </mat-form-field>                        
+                        </mat-form-field>  
+                        
+                        <mat-label>Silos</mat-label>
+                        <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
+                        </mat-form-field> 
+
+                        <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label> Superficie m<sup>2</sup></mat-label>
+                            <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                        </mat-form-field> 
                      </div> <br>  
                      
-                     <mat-label>Silos</mat-label>
+                     <!-- <mat-label>Silos</mat-label>
                      <div class="puerto-form">                        
+                        <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label> Superficie m<sup>2</sup></mat-label>
+                            <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                        </mat-form-field> 
+                     </div> <br>  -->
+
+                    
+                     <div class="puerto-form">  
+                        <mat-label>Bodegas</mat-label>                      
+                        <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
+                        </mat-form-field>   
+                        
+                        <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label> Superficie m<sup>2</sup></mat-label>
+                            <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                        </mat-form-field> 
+
+                        <mat-label>Oficinas</mat-label>
                         <mat-form-field appearance="fill" class="example-full-width">
                             <mat-label>Cantidad</mat-label>
                             <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
@@ -175,7 +208,7 @@
                         </mat-form-field> 
                      </div> <br> 
 
-                     <mat-label>Bodegas</mat-label>
+                     <!-- <mat-label>Oficinas</mat-label>
                      <div class="puerto-form">                        
                         <mat-form-field appearance="fill" class="example-full-width">
                             <mat-label>Cantidad</mat-label>
@@ -186,23 +219,11 @@
                             <mat-label> Superficie m<sup>2</sup></mat-label>
                             <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
                         </mat-form-field> 
-                     </div> <br> 
+                     </div> <br>  -->
 
-                     <mat-label>Oficinas</mat-label>
-                     <div class="puerto-form">                        
-                        <mat-form-field appearance="fill" class="example-full-width">
-                            <mat-label>Cantidad</mat-label>
-                            <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
-                        </mat-form-field>   
-                        
-                        <mat-form-field appearance="fill" class="example-full-width">
-                            <mat-label> Superficie m<sup>2</sup></mat-label>
-                            <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
-                        </mat-form-field> 
-                     </div> <br> 
-
-                     <mat-label>Otros</mat-label>
-                     <div class="puerto-form">                        
+                     
+                     <div class="puerto-form">  
+                        <mat-label>Otros</mat-label>                      
                         <mat-form-field appearance="fill" class="example-full-width">
                             <mat-label>Cantidad</mat-label>
                             <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
@@ -421,18 +442,350 @@
                         <mat-label>Promedio de camiones que carga/descargan por hora</mat-label>
                         <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
                     </mat-form-field>                        
-                </div> <br>  
-                
+                </div> <br>                
                  
                  <h2>Capacidad de carga por camión</h2>
-                 
+                 <mat-label>Contenedores</mat-label>                     
+                 <div class="puerto-form">                                       
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad de carga por camión</mat-label>
+                         <input matInput placeholder="TEU"  type="number" formControlName="area" required>
+                     </mat-form-field>   
+                     
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad atención camiones por hora (camión / hora)</mat-label>
+                         <input matInput placeholder="Camión/hora"  type="number" formControlName="area" required>
+                     </mat-form-field> 
+                 </div> <br> 
+ 
+                 <mat-label>Carga general</mat-label>                     
+                 <div class="puerto-form">                        
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad de carga por camión</mat-label>
+                         <input matInput placeholder="Toneladas"  type="number" formControlName="area" required>
+                     </mat-form-field>   
+                     
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad atención camiones por hora (camión / hora)</mat-label>
+                         <input matInput placeholder="Camión/hora"  type="number" formControlName="area" required>
+                     </mat-form-field>                        
+                 </div> <br> 
+ 
+                 <mat-label>Granel sólido distinto de carbón</mat-label>                     
+                 <div class="puerto-form">                        
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad de carga por camión</mat-label>
+                         <input matInput placeholder="Toneladas"  type="number" formControlName="area" required>
+                     </mat-form-field>   
+                     
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad atención camiones por hora (camión / hora)</mat-label>
+                         <input matInput placeholder="Camión/hora"  type="number" formControlName="area" required>
+                     </mat-form-field>                        
+                 </div> <br> 
+ 
+                 <mat-label>Granel sólido en forma de carbón térmico</mat-label>                     
+                 <div class="puerto-form">                        
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad de carga por camión</mat-label>
+                         <input matInput placeholder="Toneladas"  type="number" formControlName="area" required>
+                     </mat-form-field>   
+                     
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad atención camiones por hora (camión / hora)</mat-label>
+                         <input matInput placeholder="Camión/hora"  type="number" formControlName="area" required>
+                     </mat-form-field>                        
+                 </div> <br>  
+ 
+                 <mat-label>Granel sólido en forma de carbón metalúrgico y coque</mat-label>                     
+                 <div class="puerto-form">                        
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad de carga por camión</mat-label>
+                         <input matInput placeholder="Toneladas"  type="number" formControlName="area" required>
+                     </mat-form-field>   
+                     
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad atención camiones por hora (camión / hora)</mat-label>
+                         <input matInput placeholder="Camión/hora"  type="number" formControlName="area" required>
+                     </mat-form-field>                        
+                 </div> <br>  
+ 
+                 <mat-label>Granel líquido distinto de hidrocarburos</mat-label>                     
+                 <div class="puerto-form">                        
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad de carga por camión</mat-label>
+                         <input matInput placeholder="Toneladas"  type="number" formControlName="area" required>
+                     </mat-form-field>   
+                     
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad atención camiones por hora (camión / hora)</mat-label>
+                         <input matInput placeholder="Camión/hora"  type="number" formControlName="area" required>
+                     </mat-form-field>                        
+                 </div> <br>  
+ 
+                 <mat-label>Granel líquido en forma de hidrocarburos y gas</mat-label>                     
+                 <div class="puerto-form">                        
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad de carga por camión</mat-label>
+                         <input matInput placeholder="Toneladas"  type="number" formControlName="area" required>
+                     </mat-form-field>   
+                     
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad atención camiones por hora (camión / hora)</mat-label>
+                         <input matInput placeholder="Camión/hora"  type="number" formControlName="area" required>
+                     </mat-form-field>                        
+                 </div> <br>  
+ 
+                 <mat-label>Vehiculos</mat-label>                     
+                 <div class="puerto-form">                        
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad de carga por camión</mat-label>
+                         <input matInput placeholder="Unidad de vehiculos"  type="number" formControlName="area" required>
+                     </mat-form-field>   
+                     
+                     <mat-form-field appearance="fill" class="example-full-width">
+                         <mat-label>Capacidad atención camiones por hora (camión / hora)</mat-label>
+                         <input matInput placeholder="Camión/hora"  type="number" formControlName="area" required>
+                     </mat-form-field>                        
+                 </div> <br>  
 
                     
-               
+              
+                 <div class="puerto-form">
+                  
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>¿Cuántas horas a la semana puede operar la terminal para la carga/descarga de los camiones?</mat-label>
+                        <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
+                    </mat-form-field>   
 
-                
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>¿Cuántas semanas al año está operativa la terminal para la carga/descarga de los camiones?</mat-label>
+                        <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
+                    </mat-form-field> 
+                </div> 
+                <div class="puerto-form">
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>¿Existen restricciones en la operativa que limiten la capacidad de entrega/recepción a camiones de la terminal? Definirlas</mat-label>
+                        <input matInput placeholder="Unidad"  type="number" formControlName="area" required>
+                    </mat-form-field> 
+                </div>
+                <br>
+                <h2>¿Con qué tipo de accesos/salidas cuenta el Concesionario Portuario?</h2>
+                <div class="puerto-form">                   
+                    <mat-label>Ferreo</mat-label>
+                     <mat-form-field  appearance="fill" class="example-full-width">                        
+                        <mat-select matNativeControl required>
+                          <mat-option value="si">Si</mat-option>
+                          <mat-option value="no">No</mat-option>                                                                                
+                        </mat-select> 
+                    </mat-form-field>
 
-                <button mat-flat-button matStepperNext color="primary">Siguiente</button> 
+                    <mat-label>Carretero</mat-label>
+                    <mat-form-field  appearance="fill" class="example-full-width">                        
+                        <mat-select matNativeControl required>
+                          <mat-option value="si">Si</mat-option>
+                          <mat-option value="no">No</mat-option>                                                                                
+                        </mat-select> 
+                    </mat-form-field>
+
+                    <mat-label>Fluvial</mat-label>
+                    <mat-form-field  appearance="fill" class="example-full-width">                        
+                        <mat-select matNativeControl required>
+                          <mat-option value="si">Si</mat-option>
+                          <mat-option value="no">No</mat-option>                                                                                
+                        </mat-select> 
+                    </mat-form-field>
+
+                    <mat-label>Maritimo</mat-label>
+                    <mat-form-field  appearance="fill" class="example-full-width">                        
+                        <mat-select matNativeControl required>
+                          <mat-option value="si">Si</mat-option>
+                          <mat-option value="no">No</mat-option>                                                                                
+                        </mat-select> 
+                    </mat-form-field>
+                </div>
+                <div class="puerto-form">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Otros</mat-label>
+                        <textarea matInput placeholder="Cual"></textarea>
+                    </mat-form-field>
+                </div> 
+
+                <div class="puerto-form">
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>¿Cuál es la capacidad de transferencia (Toneladas / hora) en lo otros modos de transporte distinto de camiones?</mat-label>
+                        <input matInput placeholder="(Toneladas / hora)"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                </div>
+                <br>
+
+                <h2>En caso de salida de producto por otro medio diferente a camión (tren, ducto, barcaza). Especificar lo siguiente:</h2>
+                <mat-label>Contenedores</mat-label>                     
+                <div class="puerto-form">                        
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de transferencia </mat-label>
+                        <input matInput placeholder="(TEU / hora)"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de carga por unidad toneladas/vagón, toneladas/barcaza, m3/hora para tubería, etc.</mat-label>
+                        <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Factor de ocupación de la terminal</mat-label>
+                        <input matInput placeholder="(80%,90%,100%)"  type="number" formControlName="area" required>
+                    </mat-form-field>  
+                </div> <br> 
+
+                <mat-label>Carga general</mat-label>                     
+                <div class="puerto-form">                        
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de transferencia </mat-label>
+                        <input matInput placeholder="(TEU / hora)"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de carga por unidad toneladas/vagón, toneladas/barcaza, m3/hora para tubería, etc.</mat-label>
+                        <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Factor de ocupación de la terminal</mat-label>
+                        <input matInput placeholder="(80%,90%,100%)"  type="number" formControlName="area" required>
+                    </mat-form-field>  
+                </div> <br> 
+
+                <mat-label>Granel sólido distinto de carbón</mat-label>                     
+                <div class="puerto-form">                        
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de transferencia </mat-label>
+                        <input matInput placeholder="(TEU / hora)"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de carga por unidad toneladas/vagón, toneladas/barcaza, m3/hora para tubería, etc.</mat-label>
+                        <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Factor de ocupación de la terminal</mat-label>
+                        <input matInput placeholder="(80%,90%,100%)"  type="number" formControlName="area" required>
+                    </mat-form-field>  
+                </div> <br> 
+
+                <mat-label>Granel sólido en forma de carbón térmico</mat-label>                     
+                <div class="puerto-form">                        
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de transferencia </mat-label>
+                        <input matInput placeholder="(TEU / hora)"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de carga por unidad toneladas/vagón, toneladas/barcaza, m3/hora para tubería, etc.</mat-label>
+                        <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Factor de ocupación de la terminal</mat-label>
+                        <input matInput placeholder="(80%,90%,100%)"  type="number" formControlName="area" required>
+                    </mat-form-field>  
+                </div> <br> 
+
+                <mat-label>Granel sólido en forma de carbón metalúrgico y coque</mat-label>                     
+                <div class="puerto-form">                        
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de transferencia </mat-label>
+                        <input matInput placeholder="(TEU / hora)"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de carga por unidad toneladas/vagón, toneladas/barcaza, m3/hora para tubería, etc.</mat-label>
+                        <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Factor de ocupación de la terminal</mat-label>
+                        <input matInput placeholder="(80%,90%,100%)"  type="number" formControlName="area" required>
+                    </mat-form-field>  
+                </div> <br> 
+
+                <mat-label>Granel líquido distinto de hidrocarburos</mat-label>                     
+                <div class="puerto-form">                        
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de transferencia </mat-label>
+                        <input matInput placeholder="(TEU / hora)"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de carga por unidad toneladas/vagón, toneladas/barcaza, m3/hora para tubería, etc.</mat-label>
+                        <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Factor de ocupación de la terminal</mat-label>
+                        <input matInput placeholder="(80%,90%,100%)"  type="number" formControlName="area" required>
+                    </mat-form-field>  
+                </div> <br> 
+
+                <mat-label>Granel líquido en forma de hidrocarburos y gas</mat-label>                     
+                <div class="puerto-form">                        
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de transferencia </mat-label>
+                        <input matInput placeholder="(TEU / hora)"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de carga por unidad toneladas/vagón, toneladas/barcaza, m3/hora para tubería, etc.</mat-label>
+                        <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Factor de ocupación de la terminal</mat-label>
+                        <input matInput placeholder="(80%,90%,100%)"  type="number" formControlName="area" required>
+                    </mat-form-field>  
+                </div> <br> 
+
+                <mat-label>Vehiculos</mat-label>                     
+                <div class="puerto-form">                        
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de transferencia </mat-label>
+                        <input matInput placeholder="(Unidad de vehiculos / hora)"  type="number" formControlName="area" required>
+                    </mat-form-field>   
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Capacidad de carga por unidad toneladas/vagón, toneladas/barcaza, m3/hora para tubería, etc.</mat-label>
+                        <input matInput placeholder="metros cuadrados"  type="number" formControlName="area" required>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Factor de ocupación de la terminal</mat-label>
+                        <input matInput placeholder="(80%,90%,100%)"  type="number" formControlName="area" required>
+                    </mat-form-field>  
+                </div> <br> 
+                <div class="puerto-form"> 
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Horas operativas al año</mat-label>
+                        <input matInput placeholder="(horas / año)"  type="number" formControlName="area" required>
+                    </mat-form-field> 
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Restricciones a la operativa</mat-label>
+                        <textarea matInput></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="puerto-form"> 
+                    <mat-form-field class="example-full-width">
+                        <mat-label>¿Qué proyectos (inversión en infraestructura, compra de equipamiento o mejora operativa) están  previstos desarrollar
+                            <br> de acuerdo a lo establecido en los títulos de concesión? ¿En qué horizonte  temporal está prevista la puesta en marcha
+                            <br> de los mismos? ¿A cuánto ascienden (en dólares) estas  inversiones</mat-label>
+                        <textarea matInput></textarea>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>¿Para qué tipos de carga?</mat-label>
+                        <textarea matInput></textarea>
+                    </mat-form-field>
+                </div>
+                <button mat-flat-button matStepperNext color="primary">Finalizar</button> 
         </form>
     </div> 
     </mat-step>    

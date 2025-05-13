@@ -55,10 +55,7 @@ export class CrearComponent {
 
   primeroFormGroup = this.formBuilder.group({
     name: ['', Validators.required],
-  });
-  segundoFormGroup = this.formBuilder.group({
-    area: ['', Validators.required],
-  });
+  }); 
   terceroFormGroup = this.formBuilder.group({
     area: ['', Validators.required],
   });
@@ -67,6 +64,10 @@ export class CrearComponent {
   });
 
   addPuerto(){
+    //console.log(this.puerto);
+  }
+
+  agregar(){
     //console.log(this.puerto);
   }
 
