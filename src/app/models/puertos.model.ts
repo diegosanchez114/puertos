@@ -1,13 +1,15 @@
 export interface IPuertosModel {    
-    puerto: string,
+    nombre: string,
     ciudad: string
     personaEntrevistada: string,
     cargo: string,
     personaContacto: string,
     cedula:string,
     correo: string,
-    telefono: string
+    telefono: string,
+    areaUsoPublico: number,
+    areaUsoAdyacente: number,
     fechaCreacion: Date,
-    fechaModificacion: Date,   
+    fechaModificacion: Date,       
     id: number,   
 }

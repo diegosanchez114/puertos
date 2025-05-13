@@ -22,11 +22,11 @@ export class ListarComponent implements OnInit{
 
   public listPuertos: IPuertosModel[]= []
 
-  displayedColumns: string[] = ['puerto', 'personaContacto', 'correo', 'telefono'];
+  displayedColumns: string[] = ['nombre', 'personaContacto', 'correo', 'telefono'];
   dataSource = this.listPuertos;
 
   public filter: IFilter= {
-    searchBy: 'name',
+    searchBy: 'nombre',
     value: 'Buscar'
   }
 

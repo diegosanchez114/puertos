@@ -1,51 +1,51 @@
 <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="primeroFormGroup">
         <div class="form-container">
-            <form [formGroup]="primeroFormGroup">
+            <form [formGroup]="primeroFormGroup" (ngSubmit)="CrearPuerto()">
                 <ng-template matStepLabel>Crear Puerto</ng-template>                
                 <div class="puerto-form" >
                     <mat-form-field appearance="fill" class="example-full-width">
-                        <mat-label for="name">Nombre de la sociedad portuaria</mat-label>
-                        <input matInput placeholder="Ingresa el nombre"  formControlName="name" required>
+                        <mat-label for="nombre">Nombre de la sociedad portuaria</mat-label>
+                        <input matInput placeholder="Ingresa el nombre"  formControlName="nombre" required>
                     </mat-form-field>
 
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label for="ciudad">Ciudad a la que pertenece la sociedad portuaria</mat-label>
-                        <input matInput type="email" placeholder="Sociedad Portuaria" name="ciudad">
+                        <input matInput type="text" placeholder="Sociedad Portuaria" formControlName="ciudad">
                     </mat-form-field>
 
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label for="personaEntrevistada">Persona Entrevistada</mat-label>
-                        <input matInput placeholder="Ingresa la persona" name="personaEntrevistada">
+                        <input matInput placeholder="Ingresa la persona" formControlName="personaEntrevistada">
                     </mat-form-field>    
                 </div>
 
                 <div class="puerto-form">              
                     <mat-form-field appearance="fill"  class="example-full-width">
                         <mat-label for="cargo">Cargo dentro de la empresa</mat-label>
-                        <input matInput placeholder="Ingresa el cargo" name="cargo">
+                        <input matInput placeholder="Ingresa el cargo" name="cargo" formControlName="cargo">
                     </mat-form-field>
 
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label for="personaContacto">Persona de contacto</mat-label>
-                        <input matInput placeholder="Persona de conacto" name="personaContacto">
+                        <input matInput placeholder="Persona de contacto" name="personaContacto" formControlName="personaContacto">
                     </mat-form-field>
                     
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label for="cedula">Cedula de Ciudadania</mat-label>
-                        <input matInput placeholder="Cedula de Ciudadania" name="cedula">
+                        <input matInput placeholder="Cedula de Ciudadania" name="cedula" formControlName="cedula">
                     </mat-form-field>
                 </div>
 
                 <div class="puerto-form">
                     <mat-form-field appearance="fill"  class="example-full-width">
                         <mat-label for="correo">Correo Electronico</mat-label>
-                        <input matInput placeholder="Correo Electronico" name="correo">
+                        <input matInput placeholder="Correo Electronico" name="correo" formControlName="correo">
                     </mat-form-field>
             
                     <mat-form-field appearance="fill"  class="example-full-width">
                         <mat-label for="telefono">Telefono</mat-label>
-                        <input matInput placeholder="Telefono" name="telefono">
+                        <input matInput placeholder="Telefono" name="telefono" formControlName="telefono">
                     </mat-form-field> 
                 </div><br>
 
@@ -53,15 +53,15 @@
                 <div class="puerto-form">
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label>¿Cuál es el área de uso público del concesionario? m<sup>2</sup> </mat-label>
-                        <input matInput placeholder="área de uso público"  type="number" formControlName="area" required>
+                        <input matInput placeholder="área de uso público"  type="number" formControlName="areaUsoPublico">
                     </mat-form-field>
 
                     <mat-form-field appearance="fill" class="example-full-width">
                         <mat-label>¿Cuál es el área del uso adyacente? m<sup>2</sup></mat-label>
-                        <input matInput placeholder="área del uso adyacente"  type="number">
+                        <input matInput placeholder="área del uso adyacente"  type="number" formControlName="areaUsoAdyacente">
                     </mat-form-field> 
                 </div>              
-                <button mat-flat-button matStepperNext color="primary">Siguiente</button>
+                <button mat-flat-button matStepperNext color="primary" type="submit" [disabled]="primeroFormGroup.invalid">Guardar</button>
             </form>
         </div> 
     </mat-step>   

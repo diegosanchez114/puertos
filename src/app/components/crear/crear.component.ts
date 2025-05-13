@@ -8,6 +8,7 @@ import { IPuertosModel } from '../../models/puertos.model';
 import {FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
+import { PuertosService } from '../../services/puertos.service';
 
 
 interface Modo {
@@ -27,6 +28,7 @@ interface Modo {
 export class CrearComponent {
 
   private formBuilder: FormBuilder= inject(FormBuilder)
+  private puertoService= inject(PuertosService);
 
   
 
@@ -54,7 +56,16 @@ export class CrearComponent {
   isLinear = true;
 
   primeroFormGroup = this.formBuilder.group({
-    name: ['', Validators.required],
+    nombre: ['', Validators.required],
+    ciudad: [''],
+    personaEntrevistada: [''],
+    cargo: [''],
+    personaContacto: [''],
+    cedula: [''],
+    correo: [''],
+    telefono: [''],
+    areaUsoPublico: [''],
+    areaUsoAdyacente: ['']
   }); 
   terceroFormGroup = this.formBuilder.group({
     area: ['', Validators.required],
@@ -69,6 +80,16 @@ export class CrearComponent {
 
   agregar(){
     //console.log(this.puerto);
+  }
+
+  CrearPuerto() {
+    if (this.primeroFormGroup.invalid) return;
+    console.log(this.primeroFormGroup.value)
+    this.puertoService.CrearPuerto(this.primeroFormGroup.value)    
+      .subscribe({        
+        next: res => console.log('Producto creado:', res),
+        error: err => console.error('Error:', err)
+      });
   }
 
 }

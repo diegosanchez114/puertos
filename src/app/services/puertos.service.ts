@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { first, map } from 'rxjs';
+import { first, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,4 +16,10 @@ getPuertos(){
     map( (data:any) => data)
   )
 }
+
+CrearPuerto(data: any): Observable<any>{
+  return this.http.post(this.URL_BASE, data)
+   
+}
+
 }
